@@ -4,6 +4,12 @@ Example project template inspired by [this video](https://www.youtube.com/watch?
 
 See also [`mlframework`](https://github.com/abhi1thakur/mlframework) for an example project.
 
+## TODO
+
+- [ ]  Pre-train and post-train tests
+- [ ]  Better logging
+- [ ]  Predictions
+
 ## Instructions
 
 Install dependencies:
