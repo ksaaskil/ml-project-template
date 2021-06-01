@@ -1,3 +1,4 @@
+import joblib
 import pandas as pd
 from sklearn import metrics
 from sklearn import preprocessing
@@ -41,6 +42,9 @@ def example_main():
     y_pred = clf.predict_proba(val_df)[:, 1]
 
     print(metrics.roc_auc_score(y_val, y_pred))
+
+    joblib.dump(label_encoders, f"models/{MODEL}_label_encoder.pkl")
+    joblib.dump(clf, f"models/{MODEL}.pkl")
 
 
 if __name__ == "__main__":

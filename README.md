@@ -32,6 +32,12 @@ $ python -m src.create_folds
 $ python -m src.train
 ```
 
+## Folder structure
+
+- `src`: source code
+- `input`: datasets
+- `models`: model artifacts
+
 ## Tips
 
 ### Add `.gitignore`
