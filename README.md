@@ -1,5 +1,9 @@
 # ML Project template
 
+Example project template inspired by [this video](https://www.youtube.com/watch?v=ArygUBY0QXw) by the Kaggle Grandmaster Abhishek Thakur.
+
+See also [`mlframework`](https://github.com/abhi1thakur/mlframework) for an example project.
+
 ## Instructions
 
 Install dependencies:
