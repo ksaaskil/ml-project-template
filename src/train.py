@@ -1,25 +1,18 @@
 import pandas as pd
-from sklearn import ensemble
 from sklearn import metrics
 from sklearn import preprocessing
 
+from . import dispatcher
+
 TRAINING_DATA = "input/train_folds.csv"
-
 FOLD = 0
-
-FOLD_MAPPING = {
-    0: [1, 2, 3, 4],
-    1: [0, 2, 3, 4],
-    2: [0, 1, 3, 4],
-    3: [0, 1, 2, 4],
-    4: [0, 1, 2, 3],
-}
+MODEL = "random_forest"
 
 
 def example_main():
 
     df = pd.read_csv(TRAINING_DATA)
-    train_df = df[df.kfold.isin(FOLD_MAPPING.get(FOLD))]
+    train_df = df[df.kfold != FOLD]
     val_df = df[df.kfold == FOLD]
 
     y_train = train_df.target.values
@@ -41,7 +34,7 @@ def example_main():
         val_df.loc[:, c] = lbl.transform(val_df[c].values.tolist())
         label_encoders.append((c, lbl))
 
-    clf = ensemble.RandomForestClassifier(n_estimators=20, verbose=2)
+    clf = dispatcher.MODELS[MODEL]
 
     clf.fit(train_df, y_train)
 

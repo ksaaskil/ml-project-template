@@ -23,13 +23,13 @@ $ download.sh
 ### Create folds
 
 ```bash
-$ python src/create_folds.py
+$ python -m src.create_folds
 ```
 
 ### Train a model
 
 ```bash
-$ python src/train.py
+$ python -m src.train
 ```
 
 ## Tips
